@@ -1,0 +1,109 @@
+﻿<Window x:Class="KofteciYusuf.comWPF.UyeGiris"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KofteciYusuf.comWPF"
+        mc:Ignorable="d"
+        Title="UyeGiris" Height="626.5" Width="818" Background="White" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="68"/>
+                <RowDefinition Height="170*"/>
+                <RowDefinition Height="231*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0">
+                <Border  Grid.Row="0" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="800" Background="Black" Margin="-4,0,-1,0" Grid.RowSpan="2">
+                    <!--sağ sol marginler 100-->
+                    <!--HEIGHT 70-->
+                    <Grid >
+                        <Border Margin="30,10,30,10" >
+                            <!--HEADER-->
+                            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Button   BorderThickness="0" Background="{x:Null}" Cursor="Hand" Click="Anasayfa">
+                                    <Image Source="https://kofteciyusuf.com/assets/dist/img/logo.png" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="img_anasayfa" >
+                                        <!--ANA SAYFA DÜĞMESİ-->
+                                        <Image.Style>
+                                            <Style TargetType="Image">
+                                                <!--TO DO-->
+                                                <!--  RESME TIKLAYINCA ANASAYFAYA GİTTME YAPILACAK CLİCK İLE-->
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
+                                </Button>
+                                <!--ÜRÜNLERİMİZ-->
+                                <Button Content="Ürünlerimiz"  Margin="10,0,0,0"  x:Name="btn_urunlerimiz" Foreground="White" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="{x:Null}" Cursor="Hand" Click="Btn_urunlerimiz_Click">
+                                    <!--TODO                IZGARA ETLER        ÜZERİNE GELİNCE ÜRÜNLER RESİMLERİ AÇILACAK-->
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="Black" />
+                                                    <!--çalışmıyor?????????????????????*-->
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                                <Button Content="Şubelerimiz"  Margin="10,0,0,0"  Foreground="White" BorderThickness="0" Background="{x:Null}" Cursor="Hand"/>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                                <Button Content="Kurumsal"  Margin="10,0,0,0"  Foreground="White" BorderThickness="0" Background="{x:Null}" Cursor="Hand"/>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                                <Button  Margin="10,0,0,0" Cursor="Hand"  Background="{x:Null}"  BorderThickness="0">
+                                    <Image Source="Pictures/images.png" Height="21" HorizontalAlignment="Left"/>
+                                </Button>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                                <Button  HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Background="#fa9628" Margin="10,0,0,0"  Cursor="Hand"  BorderThickness="1">
+                                    <Image Source="Pictures/siparishattı.png" Height="35" HorizontalAlignment="Left"/>
+                                </Button>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                                <Button  Foreground="White" Background="#cc021b" BorderBrush="Black" Margin="10,0,0,0"  Cursor="Hand"  BorderThickness="0">
+                                    <Image Source="Pictures/onlinesiparisver.png" Height="35" HorizontalAlignment="Left"/>
+                                </Button>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                                <Button   Margin="10,0,0,0"  Cursor="Hand" BorderThickness="0" Click="Button_Click_1">
+                                    <!--SEPET-->
+                                    <Image Source="Pictures/add-to-the-cart.png" />
+                                </Button>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+
+            </Border>
+            <Border Grid.Row="1"  >
+                <Border.Background>
+                    <ImageBrush ImageSource="Pictures/üyeolarkaplan.jpg"/>
+                </Border.Background>
+
+                <Canvas>
+                    <Border Background="#e3e5e3" CornerRadius="20" Width="353" HorizontalAlignment="Center" VerticalAlignment="Center" Height="178" Canvas.Left="232" Canvas.Top="32">
+
+
+                        <StackPanel>
+                            <TextBox x:Name="txtdenem1" Visibility="Hidden"></TextBox>
+                            <TextBox x:Name="txtdenem2" Visibility="Hidden"></TextBox>
+                            <TextBox FontFamily="Helvetica" Margin="0,5,0,3" x:Name="TxtbEposta"  FontWeight="Light"  Text="E-posta Adresiniz Yada Gsm No"   FontSize="15" Width="250"  Foreground="Gray"   BorderThickness="1"   Background="White"  Height="30" Opacity="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+
+                            <PasswordBox  x:Name="TxtbSifre" FontFamily="Helvetica" FontWeight="Light" Margin="0,5,0,0" Password="şifre" FontSize="15"
+                             Width="250" Foreground="Gray" BorderThickness="1" Background="White" Height="30"  Opacity="1"  HorizontalContentAlignment="Left"   VerticalContentAlignment="Center"/>
+                            <DockPanel>
+                                <Button Height="32" Content="Giriş Yap" Width="112" Margin="50,10,0,0" Background="Red" Click="GirisYap"  />
+                                <Button Height="32" Content="Üye Ol" Width="111"  Margin="0,10,50,0" Background="Orange" Click="Button_Click" />
+                            </DockPanel>
+                            <Button Content="Şifremi Unuttum"  BorderBrush="Transparent" Background="{x:Null}" TextElement.FontSize="18" Padding="0" Width="136" HorizontalAlignment="Center" Margin="100,3,115,20" />
+                        </StackPanel>
+                    </Border>
+                </Canvas>
+            </Border>
+            <Border Grid.Row="2">
+                <Image Source="Pictures/f00ter.png" Height="Auto" Width="Auto"/>
+            </Border>
+            <Button Content=" " HorizontalAlignment="Left" FontSize="10" Margin="202,56,0,0" Grid.Row="2" VerticalAlignment="Top" Width="71" Foreground="White" BorderThickness="0" Cursor="Hand" Click="Hakkimizda" Background="{x:Null}" Height="25" RenderTransformOrigin="0.413,0.529"/>
+
+
+        </Grid>
+    </ScrollViewer>
+</Window>

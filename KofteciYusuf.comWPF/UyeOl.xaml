@@ -1,0 +1,198 @@
+﻿<Window x:Class="KofteciYusuf.comWPF.UyeOl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KofteciYusuf.comWPF"
+        mc:Ignorable="d"
+        Title="UyeOl" Height="1099" Width="818" Background="White" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="68"/>
+                <RowDefinition Height="300*"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0">
+                <Border  Grid.Row="0" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="800" Background="Black" Margin="-4,0,-1,0" Grid.RowSpan="2">
+                    <!--sağ sol marginler 100-->
+                    <!--HEIGHT 70-->
+                    <Grid >
+                        <Border Margin="30,10,30,10" >
+                            <!--HEADER-->
+                            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Button   BorderThickness="0" Background="{x:Null}" Cursor="Hand" Click="Anasayfa">
+                                    <Image Source="https://kofteciyusuf.com/assets/dist/img/logo.png" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="img_anasayfa" >
+                                        <!--ANA SAYFA DÜĞMESİ-->
+                                        <Image.Style>
+                                            <Style TargetType="Image">
+                                                <!--TO DO-->
+                                                <!--  RESME TIKLAYINCA ANASAYFAYA GİTTME YAPILACAK CLİCK İLE-->
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
+                                </Button>
+                                <!--ÜRÜNLERİMİZ-->
+                                <Button Content="Ürünlerimiz"  Margin="10,0,0,0"  x:Name="btn_urunlerimiz" Foreground="White" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="{x:Null}" Cursor="Hand" Click="Btn_urunlerimiz_Click">
+                                    <!--TODO                IZGARA ETLER        ÜZERİNE GELİNCE ÜRÜNLER RESİMLERİ AÇILACAK-->
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="Black" />
+                                                    <!--çalışmıyor?????????????????????*-->
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                                <Button Content="Şubelerimiz"  Margin="10,0,0,0"  Foreground="White" BorderThickness="0" Background="{x:Null}" Cursor="Hand"/>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                                <Button Content="Kurumsal"  Margin="10,0,0,0"  Foreground="White" BorderThickness="0" Background="{x:Null}" Cursor="Hand"/>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                                <Button  Margin="10,0,0,0" Cursor="Hand"  Background="{x:Null}"  BorderThickness="0">
+                                    <Image Source="Pictures/images.png" Height="21" HorizontalAlignment="Left"/>
+                                </Button>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                                <Button  HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Background="#fa9628" Margin="10,0,0,0"  Cursor="Hand"  BorderThickness="1">
+                                    <Image Source="Pictures/siparishattı.png" Height="35" HorizontalAlignment="Left"/>
+                                </Button>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                                <Button  Foreground="White" Background="#cc021b" BorderBrush="Black" Margin="10,0,0,0"  Cursor="Hand"  BorderThickness="0">
+                                    <Image Source="Pictures/onlinesiparisver.png" Height="35" HorizontalAlignment="Left"/>
+                                </Button>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                                <Button   Margin="10,0,0,0"  Cursor="Hand" BorderThickness="0" Click="Button_Click_1">
+                                    <!--SEPET-->
+                                    <Image Source="Pictures/add-to-the-cart.png" />
+                                </Button>
+                                <!--ÇALIŞMASINA GEREK YOK-->
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+
+            </Border>
+
+            <Border Grid.Row="1"  >
+                <Border.Background>
+                    <ImageBrush ImageSource="Pictures/üyeolarkaplan.jpg" Opacity="50"/>
+                </Border.Background>
+                <Border CornerRadius="20" Margin="120,50" Background="#e3e5e3" >
+                    <Canvas>
+                        <TextBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Text="Adınız"
+                             FontSize="28"
+                             Width="204"
+                             Foreground="Gray"
+                             BorderThickness="1"
+                             Background="White"
+                             Height="50"
+                             Opacity="1"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center" Canvas.Left="39" Canvas.Top="48"
+                                                          
+                        
+                        
+                        />
+                        <TextBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Text="Soyadınız"
+                             FontSize="28"
+                             Width="184"
+                             Foreground="Gray"
+                             BorderThickness="1"
+                             Background="White"
+                             Height="50"
+                             Opacity="1"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center" Canvas.Left="311" Canvas.Top="48" RenderTransformOrigin="0.372,0.13"                             
+                        
+                        
+                        />
+                        <TextBox     x:Name="Txtbkayıteposta"       FontFamily="Helvetica" FontWeight="Light"  Text="E-posta" FontSize="28"  Width="208"  Foreground="Gray"  
+                                 BorderThickness="1"  Background="White"  Height="48" Opacity="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Canvas.Left="39" Canvas.Top="124" />
+                        <PasswordBox  x:Name="passkayıtsifre" FontFamily="Helvetica" FontWeight="Light" Password="Şifre" FontSize="28" Width="170" Foreground="Gray" BorderThickness="1"  Background="White" Height="42"   Opacity="1" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" Canvas.Left="39" Canvas.Top="194" />
+                        <TextBox FontFamily="Helvetica" FontWeight="Light" Text="Daire No" FontSize="28" Width="204" Foreground="Gray" BorderThickness="1"  Background="White"   Height="50"  Opacity="1"  HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" Canvas.Left="39" Canvas.Top="411"/>
+                        <TextBox FontFamily="Helvetica"  FontWeight="Light"  Text="Kapı No" FontSize="28"  Width="204"    Foreground="Gray"
+                             BorderThickness="1"
+                             Background="White"
+                             Height="50"
+                             Opacity="1"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center" Canvas.Left="291" Canvas.Top="329"
+                                                          
+                        
+                        
+                        />
+                        <TextBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Text="Apartman/site"
+                             FontSize="28"
+                             Width="180"
+                             Foreground="Gray"
+                             BorderThickness="1"
+                             Background="White"
+                             Height="45"
+                             Opacity="1"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center" Canvas.Left="39" Canvas.Top="334"
+                                                          
+                        
+                        
+                        />
+                        <TextBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Text="Kat"
+                             FontSize="28"
+                             Width="204"
+                             Foreground="Gray"
+                             BorderThickness="1"
+                             Background="White"
+                             Height="50"
+                             Opacity="1"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center" Canvas.Left="291" Canvas.Top="411"
+                                                          
+                        
+                        
+                        />
+
+                        <CheckBox Content=" Okudum, Kabul Ediyorum." FontSize="18"    Height="35"  x:Name="CheckOkudum"   Width="246"  Padding="0" Canvas.Left="39" Canvas.Top="497"  />
+                        <Button Height="46" Content="Üyeliğimi Tamamla" Width="456" Background="Red" Canvas.Left="39" Canvas.Top="537" FontSize="30" Foreground="White" Click="Uyetamam" />
+                        <ComboBox Canvas.Left="311" Canvas.Top="124" Height="48" Width="184" FontSize="20">
+                            <ComboBoxItem IsSelected="True">Adres Tipi*</ComboBoxItem>
+                            <ComboBoxItem>Ev</ComboBoxItem>
+                            <ComboBoxItem>İş</ComboBoxItem>
+                            <ComboBoxItem>Diğer</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox Canvas.Left="311" Canvas.Top="188" Height="48" Width="184" FontSize="20">
+                            <ComboBoxItem IsSelected="True">İlçe*</ComboBoxItem>
+                            <ComboBoxItem>Yıldırım</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox Canvas.Left="311" Canvas.Top="264" Height="48" Width="184" FontSize="20">
+                            <ComboBoxItem IsSelected="True">Cadde/Sokak*</ComboBoxItem>
+                            <ComboBoxItem>Eğitim</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox Canvas.Left="39" Canvas.Top="264" Height="48" Width="184" FontSize="20">
+                            <ComboBoxItem IsSelected="True">Mahalle*</ComboBoxItem>
+                            <ComboBoxItem>Erikli</ComboBoxItem>
+                        </ComboBox>
+
+
+                    </Canvas>
+                </Border>
+
+
+            </Border>
+
+            <Border Grid.Row="2">
+                <Image Source="Pictures/f00ter.png" Height="Auto" Width="Auto"/>
+            </Border>
+            <Button Content=" " HorizontalAlignment="Left" FontSize="10" Margin="200,57,0,0" Grid.Row="2" VerticalAlignment="Top" Width="71" Foreground="White" BorderThickness="0" Cursor="Hand" Click="Hakkimizda" Background="{x:Null}" Height="24" RenderTransformOrigin="0.413,0.529"/>
+
+
+        </Grid>
+    </ScrollViewer>
+</Window>

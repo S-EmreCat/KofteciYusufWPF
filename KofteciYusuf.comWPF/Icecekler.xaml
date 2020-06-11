@@ -1,0 +1,198 @@
+﻿<Window x:Class="KofteciYusuf.comWPF.Icecekler"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KofteciYusuf.comWPF"
+        mc:Ignorable="d"
+        Title="Icecekler" Height="1099" Width="818" Background="White" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <!--header-->
+                <RowDefinition Height="68"  />
+                <!--ürünler-->
+                <RowDefinition Height="690"/>
+                <!--footer (şirket profili açılabilir olacak)-->
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+            <!--HEADER-->
+            <Border  Grid.Row="0" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="800" Background="Black" Margin="-4,0,-1,0" Grid.RowSpan="2">
+                <!--sağ sol marginler 100-->
+                <!--HEIGHT 70-->
+                <Grid >
+                    <Border Margin="30,10,30,10" >
+                        <!--HEADER-->
+                        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Button   BorderThickness="0" Background="{x:Null}" Cursor="Hand" Click="Anamenü">
+                                <Image Source="https://kofteciyusuf.com/assets/dist/img/logo.png" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="img_anasayfa" >
+                                    <!--ANA SAYFA DÜĞMESİ-->
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <!--TO DO-->
+                                            <!--  RESME TIKLAYINCA ANASAYFAYA GİTTME YAPILACAK CLİCK İLE-->
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </Button>
+                            <!--ÜRÜNLERİMİZ-->
+                            <Button Content="Ürünlerimiz"  Margin="10,0,0,0"  x:Name="btn_urunlerimiz" Foreground="White" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="{x:Null}" Cursor="Hand" Click="Btn_urunlerimiz_Click">
+                                <!--TODO                IZGARA ETLER        ÜZERİNE GELİNCE ÜRÜNLER RESİMLERİ AÇILACAK-->
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="Black" />
+                                                <!--çalışmıyor?????????????????????*-->
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Content="Şubelerimiz"  Margin="10,0,0,0"  Foreground="White" BorderThickness="0" Background="{x:Null}" Cursor="Hand"/>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                            <Button Content="Kurumsal"  Margin="10,0,0,0"  Foreground="White" BorderThickness="0" Background="{x:Null}" Cursor="Hand"/>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                            <Button  Margin="10,0,0,0" Cursor="Hand"  Background="{x:Null}"  BorderThickness="0">
+                                <Image Source="Pictures/images.png" Height="21" HorizontalAlignment="Left"/>
+                            </Button>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                            <Button  HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Background="#fa9628" Margin="10,0,0,0"  Cursor="Hand"  BorderThickness="1">
+                                <Image Source="Pictures/siparishattı.png" Height="35" HorizontalAlignment="Left"/>
+                            </Button>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                            <Button  Foreground="White" Background="#cc021b" BorderBrush="Black" Margin="10,0,0,0"  Cursor="Hand"  BorderThickness="0">
+                                <Image Source="Pictures/onlinesiparisver.png" Height="35" HorizontalAlignment="Left"/>
+                            </Button>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                            <Button   Margin="10,0,0,0"  Cursor="Hand" BorderThickness="0" Click="Button_Click">
+                                <!--SEPET-->
+                                <Image Source="Pictures/add-to-the-cart.png" />
+                            </Button>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1">
+                <StackPanel  Orientation="Horizontal">
+                    <StackPanel Width="250">
+                        <TextBlock Text="ÜRÜN KATEGORİLERİ" FontWeight="Bold" Margin="35,10,10,10" />
+                        <Rectangle Fill="Orange" Height="3" Margin="10,-10,130,0" Width="60" />
+                        <Button Style="{DynamicResource secilmeyenbuton}" Margin="20" Click="Button_Click_7">
+                            <DockPanel>
+                                <Label Content="Izgara Etler       "/>
+                                <Image Source="/Pictures/next.png" Height="10"/>
+                            </DockPanel>
+                        </Button>
+                        <Button Style="{DynamicResource secilmeyenbuton}" Margin="20,0" Click="Button_Click_1">
+                            <DockPanel>
+                                <Label Content="Çiğ Ürünler       "/>
+                                <Image Source="/Pictures/next.png" Height="10"/>
+                            </DockPanel>
+                        </Button>
+                        <Button Style="{DynamicResource secilmeyenbuton}" Margin="20,10" Click="Button_Click_2">
+                            <DockPanel>
+                                <Label Content="Kahvaltı ve Yan Ürünler "/>
+                                <Image Source="/Pictures/next.png" Height="10"/>
+                            </DockPanel>
+                        </Button>
+                        <Button Style="{DynamicResource secilmeyenbuton}" Margin="20,10" Click="Button_Click_3">
+                            <DockPanel>
+                                <Label Content="Döner       "/>
+                                <Image Source="/Pictures/next.png" Height="10"/>
+                            </DockPanel>
+                        </Button>
+                        <Button Style="{DynamicResource secilmeyenbuton}" Margin="20,10" Click="Button_Click_4">
+                            <DockPanel>
+                                <Label Content="Salata Çeşitleri       "/>
+                                <Image Source="/Pictures/next.png" Height="10"/>
+                            </DockPanel>
+                        </Button>
+                        <Button Style="{DynamicResource secilmeyenbuton}" Margin="20,10" Click="Button_Click_5">
+                            <DockPanel>
+                                <Label Content="Tatlı Çeşitleri       "/>
+                                <Image Source="/Pictures/next.png" Height="10"/>
+                            </DockPanel>
+                        </Button>
+                        <Button Style="{DynamicResource secilmeyenbuton}" Margin="20,10" Click="Button_Click_6">
+                            <DockPanel>
+                                <Label Content="Şarküteri Ürünleri       "/>
+                                <Image Source="/Pictures/next.png" Height="10"/>
+                            </DockPanel>
+                        </Button>
+                        <Button Style="{DynamicResource buton}" Margin="20,10" Click="İcecek">
+                            <DockPanel>
+                                <Label Content="İçecekler      "/>
+                                <Image Source="/Pictures/next.png" Height="10"/>
+                            </DockPanel>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel>
+                        <UniformGrid Margin="0,57" Columns="3" Rows="2" Height="409" Width="516" >
+                           
+                            <Button Style="{DynamicResource ürünler}" Click="UrunDetayClick" >
+                                <StackPanel>
+                                    <Image Source="https://kofteciyusuf.com/uploads/pictures/thumb_ayran-y_05.06.2020_02_33_15.jpg" Height="60" Width="80" ></Image>
+                                    <TextBlock Text="Ayran Çeşitleri" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Bardak Ayran" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="2.50 TL" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Style="{DynamicResource ürünler}" Click="UrunDetayClick" >
+                                <StackPanel>
+                                    <Image Source="https://kofteciyusuf.com/uploads/pictures/thumb_kutu-icecekler_26.09.2019_07_06_50.jpg" Height="60" Width="80" ></Image>
+                                    <TextBlock Text="Kutu İçecekler" HorizontalAlignment="Center"/>
+                                    <TextBlock Text=" 330 ML" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="4.00 TL" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Style="{DynamicResource ürünler}">
+                                <StackPanel>
+                                    <Image Source="https://kofteciyusuf.com/uploads/pictures/thumb_doganay-salgam_27.09.2019_10_31_20.jpg" Height="60" Width="80" ></Image>
+                                    <TextBlock Text="Şalgam Suyu" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Acılı Şalgam Suyu" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="4.00 TL" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Style="{DynamicResource ürünler}" Click="UrunDetayClick" >
+                                <StackPanel>
+                                    <Image Source="https://kofteciyusuf.com/uploads/pictures/thumb_demla-soda_27.09.2019_10_20_35.jpg" Height="60" Width="80" ></Image>
+                                    <TextBlock Text="Maden Suyu" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="Maden Suyu" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="2.00 TL" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Button Style="{DynamicResource ürünler}" Click="UrunDetayClick" >
+                                <StackPanel>
+                                    <Image Source="https://kofteciyusuf.com/uploads/pictures/thumb_erikli-su_30.12.2019_07_15_59.jpg" Height="60" Width="80" ></Image>
+                                    <TextBlock Text="Su" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="1.5 LT Su" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="2.50 TL" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+                        </UniformGrid>
+                    </StackPanel>
+                </StackPanel>
+
+            </Border>
+
+            <Border  Grid.Row="2">
+                <!--FOOTER-->
+
+                <Image Source="Pictures/f00ter.png" Height="Auto" Width="Auto"/>
+
+                <!-- TO DO
+                ŞİRKET PROFİLİNE CLİCK ATANACAK
+                -->
+
+            </Border>
+            <Button Content=" " HorizontalAlignment="Left" FontSize="10" Margin="200,61,0,0" Grid.Row="2" VerticalAlignment="Top" Width="80" Foreground="White" BorderThickness="0" Cursor="Hand" Click="Hakkimizda" Background="{x:Null}" Height="26" RenderTransformOrigin="0.324,0.516"/>
+
+
+        </Grid>
+    </ScrollViewer>
+</Window>

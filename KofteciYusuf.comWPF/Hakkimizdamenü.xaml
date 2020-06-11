@@ -1,0 +1,137 @@
+﻿<Window x:Class="KofteciYusuf.comWPF.Hakkimizdamenü"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KofteciYusuf.comWPF"
+        mc:Ignorable="d"
+        Title="Hakkimizdamenü" Height="1099" Width="818" Background="White" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <ScrollViewer >
+        <Grid>
+            <Grid.RowDefinitions>
+                <!--header-->
+                <RowDefinition Height="68"  />
+                <!--ürünler-->
+                <RowDefinition Height="690"/>
+                <!--footer (şirket profili açılabilir olacak)-->
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+            <!--HEADER-->
+            <Border  Grid.Row="0" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="800" Background="Black" Margin="-4,0,-1,0" Grid.RowSpan="2">
+                <!--sağ sol marginler 100-->
+                <!--HEIGHT 70-->
+                <Grid >
+                    <Border Margin="30,10,30,10" >
+                        <!--HEADER-->
+                        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Button   BorderThickness="0" Background="{x:Null}" Cursor="Hand" Click="Button_Click">
+                                <Image Source="https://kofteciyusuf.com/assets/dist/img/logo.png" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="img_anasayfa" >
+                                    <!--ANA SAYFA DÜĞMESİ-->
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <!--TO DO-->
+                                            <!--  RESME TIKLAYINCA ANASAYFAYA GİTTME YAPILACAK CLİCK İLE-->
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </Button>
+                            <!--ÜRÜNLERİMİZ-->
+                            <Button Content="Ürünlerimiz"  Margin="10,0,0,0"  x:Name="btn_urunlerimiz" Foreground="White" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="{x:Null}" Cursor="Hand" Click="Btn_urunlerimiz_Click">
+                                <!--TODO                IZGARA ETLER        ÜZERİNE GELİNCE ÜRÜNLER RESİMLERİ AÇILACAK-->
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="Black" />
+                                                <!--çalışmıyor?????????????????????*-->
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Content="Şubelerimiz"  Margin="10,0,0,0"  Foreground="White" BorderThickness="0" Background="{x:Null}" Cursor="Hand"/>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                            <Button Content="Kurumsal"  Margin="10,0,0,0"  Foreground="White" BorderThickness="0" Background="{x:Null}" Cursor="Hand"/>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                            <Button  Margin="10,0,0,0" Cursor="Hand"  Background="{x:Null}"  BorderThickness="0">
+                                <Image Source="Pictures/images.png" Height="21" HorizontalAlignment="Left"/>
+                            </Button>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                            <Button  HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Background="#fa9628" Margin="10,0,0,0"  Cursor="Hand"  BorderThickness="1">
+                                <Image Source="Pictures/siparishattı.png" Height="35" HorizontalAlignment="Left"/>
+                            </Button>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                            <Button  Foreground="White" Background="#cc021b" BorderBrush="Black" Margin="10,0,0,0"  Cursor="Hand"  BorderThickness="0">
+                                <Image Source="Pictures/onlinesiparisver.png" Height="35" HorizontalAlignment="Left"/>
+                            </Button>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                            <Button   Margin="10,0,0,0"  Cursor="Hand" BorderThickness="0" Click="Button_Click_1">
+                                <!--SEPET-->
+                                <Image Source="Pictures/add-to-the-cart.png" />
+                            </Button>
+                            <!--ÇALIŞMASINA GEREK YOK-->
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+
+            <Border Grid.Row="1">
+                <StackPanel Orientation="Horizontal"  >
+                    <StackPanel Width="250">
+                        <TextBlock Text="KURUMSAL SAYFALAR"  FontWeight="Bold" Margin="35,10,10,10"  ></TextBlock>
+                        <Rectangle Fill="Orange" Height="3" Width="40" Margin="0,-10,130,0" />
+                        <Button  Style="{DynamicResource buton}" Margin="20">
+                            <DockPanel>
+                                <Label Content="Hakkımızda      "/>
+                                <Image Source="/Pictures/next.png" Height="10"/>
+                            </DockPanel>
+                        </Button>
+
+                    </StackPanel>
+                    <StackPanel>
+                        <Canvas>
+                            <TextBlock Text="Hakkımızda" FontWeight="Bold" Canvas.Top="10" ></TextBlock>
+                            <Rectangle Fill="Orange" Height="3" Width="40" Canvas.Top="31"/>
+                            <Image Source="/Pictures/hakkımızdafoto.jpg" Height="320" Width="559" Canvas.Top="49" Canvas.Left="-6" />
+                            <FlowDocumentScrollViewer Height="302" Canvas.Top="374" Width="538" Background="GhostWhite">
+                                <FlowDocument>
+                                    <Paragraph FontSize="10">
+                                        Gıda ve restoran sektöründe hizmet veren Köfteci Yusuf A.Ş. 1996 yılında İznik’te kuruldu. 24 yıldır Türkiye'de faaliyet gösteren Köfteci Yusuf Avrupa standartlarında 
+                                        Türkiye’nin en büyük Köfte Fabrikası unvanına sahip olup, Bursa’da 24, İstanbul’da 22, Ankara’da 11, İzmir’de 8, Balıkesir ve Samsun’da 6, Aydın, Antalya ve
+                                        Afyonkarahisar'da 3, Muğla, Bilecik, Eskişehir, Kırklareli, Kocaeli, Ordu, Konya, Kırıkkale ve Denizli'de 2, Isparta, Yalova, Sakarya, Çanakkale, Kütahya, Çankırı, Amasya, Burdur,
+                                        Edirne, Aksaray, Manisa ve Tekirdağ'da 1’er tane olmak üzere toplam 118 noktada hizmet vermektedir.
+                                    </Paragraph>
+                                    <Paragraph FontSize="10">
+                                        118 şubemizde KÖFTECİ YUSUF, 26 şubemizde DÖNER Y, 10 şubemizde KÖFTECİ YUSUF lezzetlerinin ekmek arasında buluştuğu ve Burger lezzetini deneyimleyebileceğiniz EKMEK ARASI Y ve 1 şubemizde 
+                                        Köfteci Yusuf, Hesaplı Kasap, Döner Y, Yusuf Burger, Dürüm Y, Kahvaltı ve Çorba markaları ile beş farklı lezzet alternatifinin bir arada bulunduğu YOLBOYU LEZZETLERİ ile buluşabilirsiniz.
+                                    </Paragraph>
+                                    <Paragraph FontSize="10">
+                                        Bursa Yenişehir’deki Et Entegre Tesisimizde bulunan Hesaplı Kasap’ımız, zengin kasap ve şarküteri ürünleriyle sizlerle buluşmayı beklemektedir.</Paragraph>
+                                    <Paragraph FontSize="10">
+                                        Köfteci Yusuf markası ve restoranları, Temmuz 2015’te Hürriyet Gazetesi’nin Kelebek ekinde seçilen ‘’Türkiye’nin En İyi 10 Yol Lokantası’’ sıralamasında birinci seçilerek, Türkiye’nin en güvenilir restoran markası olmuştur.
+                                    </Paragraph>
+
+                                </FlowDocument>
+                            </FlowDocumentScrollViewer>
+                        </Canvas>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border  Grid.Row="2">
+                <!--FOOTER-->
+
+                <Image Source="Pictures/f00ter.png" Height="Auto" Width="Auto"/>
+
+                <!-- TO DO
+                ŞİRKET PROFİLİNE CLİCK ATANACAK
+                -->
+
+            </Border>
+            <Button Content=" " HorizontalAlignment="Left" FontSize="10" Margin="202,57,0,0" Grid.Row="2" VerticalAlignment="Top" Width="81" Foreground="White" BorderThickness="0" Cursor="Hand" Click="Hakkimizda" Background="{x:Null}" Height="26" RenderTransformOrigin="0.413,0.529"/>
+
+        </Grid>
+    </ScrollViewer>
+</Window>
